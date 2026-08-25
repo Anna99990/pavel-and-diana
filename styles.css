@@ -1,0 +1,1320 @@
+/* ==========================================================================
+   1:1 Exact 11-Block Canva Wedding Invitation Styles
+   ========================================================================== */
+:root {
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --color-burgundy: #840606;
+  --color-burgundy-dark: #59000a;
+  --color-rose-warm: #E8B4A6;
+  --color-rose-soft: #F4D5CD;
+  --color-bg-cream: #FAF8F5;
+  --color-white: #FFFFFF;
+
+  --shadow-soft: 0 16px 40px rgba(132, 6, 6, 0.1), 0 4px 12px rgba(0, 0, 0, 0.04);
+  --shadow-hover: 0 20px 48px rgba(132, 6, 6, 0.22), 0 8px 20px rgba(0, 0, 0, 0.08);
+
+  --transition-cubic: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reset & Basic Rules */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  overflow-x: clip;
+  width: 100%;
+  min-height: 100vh;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(132, 6, 6, 0.4) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(132, 6, 6, 0.4);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-burgundy);
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg-cream);
+  color: var(--color-burgundy);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Site Container Centering */
+.site-container {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 24px 16px 60px 16px;
+  position: relative;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.site-container::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Common Image Scaling */
+.slide-img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+img,
+.slide-img,
+svg {
+  max-width: 100%;
+  backface-visibility: hidden;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: bicubic;
+}
+
+/* Base Block Spacing: Desktop 40px margin-bottom */
+.block-section {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* ==========================================================================
+   3. Music Block: Floating Audio Player Bar (svg 3 / page_03.svg - Preserved)
+   ========================================================================== */
+
+/* ==========================================================================
+   Music Block: 3.svg placed between 2.svg and 4.svg
+   ========================================================================== */
+.music-block {
+  margin: 10px auto 30px auto;
+  text-align: center;
+  width: 100%;
+}
+
+.music-svg-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: -45px auto 0 auto;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  max-width: 120px;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease;
+}
+
+.music-svg-btn:hover {
+  transform: scale(1.03);
+  filter: drop-shadow(0 8px 20px rgba(132, 6, 6, 0.25));
+}
+
+.music-pure-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.audio-widget-container {
+  position: fixed;
+  top: 24px;
+  left: 20px;
+  z-index: 9999;
+}
+
+.audio-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--color-burgundy);
+  color: var(--color-white);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(132, 6, 6, 0.35);
+  transition: var(--transition-cubic);
+}
+
+.audio-toggle-btn:hover {
+  transform: translateY(-2px) scale(1.04);
+  background-color: var(--color-burgundy-dark);
+  box-shadow: 0 12px 30px rgba(132, 6, 6, 0.45);
+}
+
+.heart-pulse-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: var(--color-rose-soft);
+  animation: heartPulse 1.8s infinite ease-in-out;
+}
+
+.equalizer-waves {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 14px;
+}
+
+.equalizer-waves .bar {
+  width: 3px;
+  height: 100%;
+  background-color: #FFFFFF;
+  border-radius: 2px;
+  animation: bounceWave 1s infinite alternate ease-in-out;
+}
+
+.equalizer-waves .bar:nth-child(1) { animation-delay: 0.1s; }
+.equalizer-waves .bar:nth-child(2) { animation-delay: 0.3s; }
+.equalizer-waves .bar:nth-child(3) { animation-delay: 0.5s; }
+
+@keyframes bounceWave {
+  0% { height: 3px; }
+  100% { height: 14px; }
+}
+
+/* ==========================================================================
+   1. Hero Block: svg 1 + svg 8 + svg 2
+   ========================================================================== */
+.hero-block {
+  text-align: center;
+}
+
+@-webkit-keyframes slideDownSlow {
+  0% {
+    -webkit-transform: translate3d(0, -220px, 0);
+    transform: translate3d(0, -220px, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideDownSlow {
+  0% {
+    -webkit-transform: translate3d(0, -220px, 0);
+    transform: translate3d(0, -220px, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.hero-svg-1 {
+  max-width: 440px;
+  margin: 0 auto -196px auto;
+  opacity: 1 !important;
+  -webkit-animation: slideDownSlow 4.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation: slideDownSlow 4.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.hero-svg-8,
+.hero-photo-svg {
+  position: relative;
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+  transition: none !important;
+}
+
+.hero-svg-8 {
+  width: 92%;
+  margin: -165px auto 24px auto;
+}
+
+.photo-accent-bg {
+  position: absolute;
+  top: 14px;
+  left: -18px;
+  right: 18px;
+  bottom: -18px;
+  background-color: var(--color-burgundy);
+  z-index: 1;
+  border-radius: 4px;
+}
+
+.main-photo-box {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: var(--shadow-soft);
+  aspect-ratio: 1295 / 838;
+}
+
+.main-couple-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 28.4%;
+}
+
+.photo-right-arch {
+  position: absolute;
+  right: -36px;
+  top: -10px;
+  bottom: -20px;
+  width: 75px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.photo-right-arch svg {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-svg-2 {
+  max-width: 480px;
+  margin: -143px auto 0 auto;
+}
+
+@keyframes waterFlowDown {
+  0% {
+    clip-path: inset(0 0 100% 0);
+    opacity: 0;
+  }
+  3% {
+    opacity: 1;
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+}
+
+.hero-wave-line,
+.transition-svg-7-wrapper,
+.transition-svg-6-wrapper,
+.gallery-bg-wave,
+.gallery-bg-wave-bottom,
+.gallery-bg-wave-top-right {
+  display: none !important;
+}
+
+/* ==========================================================================
+   2. Greeting Block: svg 4 + svg 5
+   ========================================================================== */
+.greeting-svg-4 {
+  max-width: 360px;
+  margin: -10px auto 12px auto;
+}
+
+.greeting-svg-5 {
+  max-width: 520px;
+  margin: -300px auto 0 auto;
+}
+
+/* ==========================================================================
+   4. Calendar Block: svg 9 + svg 10
+   ========================================================================== */
+.calendar-unified-box {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.calendar-base-img {
+  position: relative;
+  z-index: 1;
+}
+
+.calendar-pulsing-heart {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+  transform: translate(10.5%, 16.5%) scale(0.35);
+  transform-origin: 50% 50%;
+  animation: heartPulse 2.2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+@keyframes heartPulse {
+  0% {
+    transform: translate(10.5%, 16.5%) scale(0.35);
+    opacity: 0.95;
+  }
+  50% {
+    transform: translate(10.5%, 16.5%) scale(0.38);
+    opacity: 1;
+    filter: drop-shadow(0 4px 12px rgba(132, 6, 6, 0.4));
+  }
+  100% {
+    transform: translate(10.5%, 16.5%) scale(0.35);
+    opacity: 0.95;
+  }
+}
+
+/* ==========================================================================
+   5. Gallery Block: 13.svg (Top-Left) & 12.svg (Bottom-Right Overlap)
+   ========================================================================== */
+.gallery-block {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.gallery-overlapping-container {
+  position: relative;
+  width: 100%;
+  max-width: 760px;
+  height: clamp(380px, 58vw, 580px);
+  margin: 0 auto;
+}
+
+.gallery-bg-wave {
+  position: absolute;
+  top: -10%;
+  left: -5%;
+  margin-left: -196px;
+  margin-top: -110px;
+  width: 110%;
+  height: 120%;
+  z-index: 0;
+  pointer-events: none;
+  transform: translateX(4px);
+}
+
+.gallery-bg-wave-bottom {
+  position: absolute;
+  bottom: -20%;
+  left: -20%;
+  margin-left: -260px;
+  margin-bottom: -100px;
+  width: 130%;
+  height: 120%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.gallery-bg-wave-top-right {
+  position: absolute;
+  top: -35%;
+  right: -45%;
+  margin-right: -150px;
+  margin-top: 60px;
+  width: 120%;
+  height: 120%;
+  z-index: 0;
+  pointer-events: none;
+  transform: scaleY(-1) rotate(35deg);
+}
+
+.gallery-card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 75%;
+  z-index: 1;
+}
+
+.gallery-card-front {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 75%;
+  z-index: 2;
+}
+
+.banner-photo-wrapper {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.banner-accent-top {
+  position: absolute;
+  top: -14px;
+  left: 0; right: 0; height: 20px;
+  background-color: var(--color-burgundy);
+  z-index: 1;
+}
+
+.banner-accent-bottom {
+  position: absolute;
+  bottom: -14px;
+  left: 0; right: 0; height: 20px;
+  background-color: var(--color-burgundy);
+  z-index: 1;
+}
+
+.banner-photo-box {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  aspect-ratio: 16 / 9;
+}
+
+.banner-photo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ==========================================================================
+   6. Timeline Block: svg 14
+   ========================================================================== */
+.timeline-box {
+  position: relative;
+  width: 100%;
+  margin: 20px auto 0 auto;
+}
+
+.timeline-box img {
+  width: 120% !important;
+  max-width: 120% !important;
+  margin-left: -10% !important;
+  margin-top: 110px !important;
+}
+
+/* ==========================================================================
+   7. Locations Block: 16.svg + 17.svg (100% Untouched original Canva SVGs)
+   ========================================================================== */
+.locations-block {
+  margin-top: -170px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.location-cards-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.location-link-wrapper {
+  display: block;
+  text-decoration: none;
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.location-link-wrapper:last-child {
+  margin-top: -205px;
+}
+
+.location-pure-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ==========================================================================
+   8. Dresscode Block: svg 19, 20, 21, 22, 23
+   ========================================================================== */
+.dresscode-block {
+  margin-top: -200px;
+  margin-bottom: 80px;
+}
+
+.dresscode-svg-19 { max-width: 450px; margin: 0 auto 16px auto; }
+.dresscode-svg-20 { max-width: 680px; margin: -300px auto 24px auto; }
+.dresscode-svg-21 { max-width: 640px; margin: -300px auto 28px auto; }
+.dresscode-svg-22 { width: 100%; max-width: 780px; margin: -120px auto 20px auto; }
+.dresscode-svg-23 { max-width: 720px; margin: -130px auto 0 auto; }
+.dresscode-intro { max-width: 680px; margin: 0 auto 24px auto; }
+.dresscode-palette { max-width: 640px; margin: 0 auto 28px auto; }
+.dresscode-models-wrapper { width: 100%; max-width: 660px; margin: 0 auto 20px auto; }
+.dresscode-models-img { width: 100%; height: auto; display: block; }
+.dresscode-extra { max-width: 600px; margin: 0 auto; }
+
+/* ==========================================================================
+   9. Details Block: svg 25
+   ========================================================================== */
+.details-block {
+  margin-top: -100px;
+  margin-bottom: 70px;
+}
+
+.details-card {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.details-card img {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
+}
+
+/* ==========================================================================
+   10. RSVP Block: svg 26 (Preserved Functionality)
+   ========================================================================== */
+.rsvp-block {
+  position: relative;
+  z-index: 10;
+}
+
+.rsvp-card-wrapper {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.rsvp-card-svg {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: pointer;
+  margin-top: -22.1%;
+  margin-bottom: -18.1%;
+  transition: transform 0.3s ease;
+}
+
+.rsvp-card-svg:hover { transform: scale(1.01); }
+
+.rsvp-interactive-form {
+  padding: 32px 28px;
+  background: var(--color-burgundy);
+  color: var(--color-white);
+}
+
+.form-group {
+  margin-bottom: 22px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.95);
+  font-family: var(--font-serif);
+  text-align: left;
+}
+
+.form-group input[type="text"] {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  font-size: 1rem;
+  outline: none;
+  font-family: var(--font-sans);
+}
+
+.radio-options {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.radio-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.02rem;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+.radio-label input[type="radio"] {
+  accent-color: var(--color-rose-warm);
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.checkbox-options {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+  max-width: 340px;
+  margin: 6px auto 0 auto;
+}
+
+.checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.02rem;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  line-height: 1.35;
+}
+
+.checkbox-label input[type="checkbox"] {
+  accent-color: var(--color-rose-warm);
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.rsvp-submit-btn {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 50px;
+  background-color: var(--color-white);
+  color: var(--color-burgundy);
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: var(--transition-cubic);
+}
+
+.rsvp-submit-btn:hover { background-color: var(--color-rose-soft); transform: translateY(-2px); }
+
+.rsvp-success-message {
+  margin-top: 16px;
+  text-align: center;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   11. Footer Block: svg 27
+   ========================================================================== */
+.footer-block {
+  margin-bottom: 0px;
+}
+
+/* ==========================================================================
+   Canva 1:1 "Antigravity" Slow Wave Scroll Animations (1.4s Duration)
+   ========================================================================== */
+.scroll-reveal {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0);
+  transition: opacity 3.5s cubic-bezier(0.16, 1, 0.3, 1), transform 3.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-reveal[data-scroll-ready="true"],
+.scroll-reveal.active {
+  opacity: 1 !important;
+  transform: translate3d(0, 0, 0) scale(1) !important;
+  will-change: auto;
+}
+
+.scroll-reveal.fade-in {
+  transform: translate3d(0, 32px, 0);
+  transition: opacity 4.0s cubic-bezier(0.16, 1, 0.3, 1), transform 4.0s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-reveal.slide-in-left {
+  transform: translate3d(-35px, 0, 0);
+  transition: opacity 4.0s cubic-bezier(0.16, 1, 0.3, 1), transform 4.0s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-reveal.slide-in-right {
+  transform: translate3d(35px, 0, 0);
+  transition: opacity 4.0s cubic-bezier(0.16, 1, 0.3, 1), transform 4.0s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-reveal.slide-in-up {
+  transform: translate3d(0, 38px, 0);
+  transition: opacity 4.0s cubic-bezier(0.16, 1, 0.3, 1), transform 4.0s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-reveal.zoom-in {
+  transform: scale(0.92);
+  transition: opacity 4.0s cubic-bezier(0.16, 1, 0.3, 1), transform 4.0s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-reveal.slide-in-down {
+  transform: translate3d(0, 55px, 0) scale(0.96);
+  transition: transform 1.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-reveal.slide-from-top-only {
+  opacity: 1 !important;
+  transform: translate3d(0, -160px, 0);
+  transition: transform 1.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-reveal.slide-from-top-only[data-scroll-ready="true"],
+.scroll-reveal.slide-from-top-only.active {
+  opacity: 1 !important;
+  transform: translate3d(0, 0, 0) !important;
+}
+
+.scroll-reveal.zoom-in {
+  transform: translate3d(0, 24px, 0) scale(0.94);
+}
+
+.scroll-reveal.stagger-card {
+  transform: translate3d(0, 36px, 0);
+}
+
+/* ==========================================================================
+   Responsive Mobile Optimization (max-width: 768px and max-width: 480px)
+   ========================================================================== */
+
+@keyframes curtainRevealLeftToRight {
+  0% {
+    clip-path: inset(0 100% 0 0);
+    opacity: 0;
+  }
+  4% {
+    opacity: 1;
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+}
+
+.gallery-card-back,
+.gallery-card-front {
+  opacity: 1 !important;
+  animation: curtainRevealLeftToRight 4.0s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+  will-change: clip-path;
+}
+
+.gallery-card-front {
+  animation-delay: 0.5s !important;
+}
+
+@keyframes streamFromTopRightToBottomLeft {
+  0% {
+    clip-path: inset(0 0 0 100%);
+    opacity: 0;
+  }
+  3% {
+    opacity: 1;
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+}
+
+/* Tablet & Mobile Landscape (max-width: 991px) */
+@media (max-width: 991px) {
+  /* Wave lines strictly for mobile version: smooth top-to-bottom water flow */
+  .hero-wave-line,
+  .transition-svg-6-wrapper,
+  .gallery-bg-wave-bottom,
+  .gallery-bg-wave-top-right {
+    display: block !important;
+    opacity: 1 !important;
+    animation: waterFlowDown 2.4s cubic-bezier(0.25, 1, 0.5, 1) forwards !important;
+    will-change: clip-path;
+  }
+
+  /* Line 1 (assets/7.svg above Calendar): 100% visible, unclipped, in gap */
+  .transition-svg-7-wrapper {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: relative !important;
+    z-index: 99 !important;
+    animation: streamFromTopRightToBottomLeft 4.5s cubic-bezier(0.25, 1, 0.5, 1) forwards !important;
+    will-change: clip-path;
+  }
+
+  /* Lines 2 & 3 (assets/6.svg above Dresscode & Details): Waiting clipped at right edge until user scrolls down to them */
+  .transition-svg-6-wrapper {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: relative !important;
+    z-index: 99 !important;
+    clip-path: inset(0 0 0 100%);
+  }
+
+  /* Trigger 4.5s river stream animation on Lines 2 & 3 STRICTLY when user scrolls to each section */
+  .transition-svg-6-wrapper.is-visible,
+  .transition-svg-6-wrapper.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+    animation: streamFromTopRightToBottomLeft 4.5s cubic-bezier(0.25, 1, 0.5, 1) forwards !important;
+    will-change: clip-path;
+  }
+
+  .transition-svg-7,
+  .transition-svg-6 {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    animation: none !important;
+  }
+
+  .site-container {
+    padding: 16px 12px 0px 12px !important;
+  }
+
+  /* Hero Block */
+  .hero-svg-1 {
+    max-width: 62%;
+    margin: -25px auto -80px auto;
+  }
+  .hero-svg-8 {
+    width: 88%;
+    margin: -103px auto 16px auto;
+  }
+  .hero-photo-svg {
+    position: relative;
+    z-index: 2;
+  }
+  .hero-wave-line {
+    display: block !important;
+    position: absolute;
+    right: -45%;
+    top: 48%;
+    width: 125%;
+    z-index: 1;
+    clip-path: inset(0 0 100% 0);
+    animation: waterFlowDown 2.2s cubic-bezier(0.25, 1, 0.5, 1) 0.3s forwards !important;
+    will-change: clip-path;
+  }
+  .hero-svg-2 {
+    max-width: 72%;
+    margin: -101px auto 0 auto;
+  }
+
+  /* Music Block */
+  .music-svg-btn {
+    max-width: 115px;
+    margin: -65px auto 0 auto;
+  }
+
+  /* Greeting Block */
+  .greeting-svg-4 {
+    max-width: 58%;
+    margin: -80px auto 10px auto !important;
+  }
+  .greeting-svg-5 {
+    max-width: 78%;
+    margin: -233px auto 0 auto !important;
+  }
+
+  .transition-svg-7-wrapper {
+    display: block;
+    width: 104%;
+    max-width: 104%;
+    margin: -390px auto 90px -2%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: visible;
+  }
+  .transition-svg-7 {
+    width: 123%;
+    max-width: 123%;
+    margin-left: -11.5%;
+    transform: rotate(270deg) scale(1.04);
+    display: block;
+  }
+
+  .transition-svg-6-wrapper {
+    display: block;
+    width: 104%;
+    max-width: 104%;
+    margin: -320px auto -150px -2% !important;
+    pointer-events: none;
+    z-index: 1;
+    overflow: visible;
+  }
+  .transition-svg-6 {
+    width: 120%;
+    max-width: 120%;
+    margin-left: -10%;
+    transform: rotate(270deg);
+    display: block;
+  }
+  .transition-svg-6-dresscode {
+    margin: -220px auto -150px -2% !important;
+  }
+
+  /* Calendar Block */
+  .calendar-block {
+    margin-top: -350px;
+  }
+  .calendar-unified-box {
+    max-width: 78%;
+    margin: 0 auto;
+  }
+
+  /* Gallery Block */
+  .gallery-block {
+    margin-top: 60px;
+  }
+  .gallery-overlapping-container {
+    height: clamp(200px, 48vw, 320px);
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  .gallery-card-back {
+    top: 0;
+    left: 8%;
+    width: 76%;
+    z-index: 1;
+  }
+  .gallery-card-front {
+    bottom: -135px;
+    right: 5%;
+    width: 76%;
+    z-index: 2;
+  }
+  .gallery-bg-wave-top-right {
+    top: -45%;
+    right: -45% !important;
+    margin-right: -150px !important;
+    margin-top: 10px !important;
+  }
+
+  /* Timeline Block */
+  .timeline-box img {
+    width: 114% !important;
+    max-width: 114% !important;
+    margin-left: -7% !important;
+    margin-top: 270px !important;
+  }
+
+  /* Banner Photo Block 15.svg */
+  .banner-photo-wrapper {
+    width: 110% !important;
+    max-width: 110% !important;
+    margin-left: -5% !important;
+    margin-top: 30px !important;
+  }
+
+  /* Locations Block */
+  .locations-block {
+    margin-top: -160px !important;
+  }
+  .location-link-wrapper img {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  .location-link-wrapper:last-child {
+    margin-top: -260px;
+  }
+
+  /* Dresscode Block */
+  .dresscode-block {
+    margin-top: -380px !important;
+  }
+  .dresscode-svg-19 { max-width: 55%; margin: -200px auto 16px auto !important; }
+  .dresscode-svg-20 { max-width: 80%; margin: -225px auto 16px auto !important; }
+  .dresscode-svg-21 { max-width: 70%; margin: -250px auto 20px auto; }
+  .dresscode-svg-22 { max-width: 100%; margin: -110px auto 16px auto; }
+  .dresscode-svg-23 { max-width: 75%; margin: -120px auto 0 auto; }
+
+  /* Details Block */
+  .details-block {
+    margin-top: -425px !important;
+  }
+  .details-card img {
+    width: 92% !important;
+    max-width: 92% !important;
+    margin: 0 auto !important;
+  }
+
+  /* Footer Block 27.svg (Ждём вас!) */
+  .footer-block {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
+    position: relative !important;
+    z-index: 10 !important;
+  }
+  .footer-block img {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    display: block !important;
+    transform: none !important;
+  }
+
+  /* Audio Floating Widget */
+  .audio-widget-container {
+    top: auto;
+    bottom: 20px;
+    left: 16px;
+  }
+  .audio-toggle-btn {
+    padding: 10px 18px;
+    font-size: 0.92rem;
+  }
+}
+
+/* Mobile Small (max-width: 480px) */
+@media (max-width: 480px) {
+  .site-container {
+    padding: 12px 8px 0px 8px !important;
+  }
+
+  /* Hero Block */
+  .hero-svg-1 {
+    max-width: 58%;
+    margin: -20px auto -50px auto;
+  }
+  .hero-svg-8 {
+    width: 86%;
+    margin: -83px auto 12px auto;
+  }
+  .hero-photo-svg {
+    position: relative;
+    z-index: 2;
+  }
+  .hero-wave-line {
+    display: block !important;
+    position: absolute;
+    right: -42%;
+    top: 43%;
+    width: 120%;
+    z-index: 1;
+    clip-path: inset(0 0 100% 0);
+    animation: waterFlowDown 2.2s cubic-bezier(0.25, 1, 0.5, 1) 0.3s forwards !important;
+    will-change: clip-path;
+  }
+  .hero-svg-2 {
+    max-width: 68%;
+    margin: -81px auto 0 auto;
+  }
+
+  /* Music Block */
+  .music-svg-btn {
+    max-width: 110px;
+    margin: -60px auto 0 auto;
+  }
+
+  /* Greeting Block */
+  .greeting-svg-4 {
+    max-width: 54%;
+    margin: -60px auto 8px auto !important;
+  }
+  .greeting-svg-5 {
+    max-width: 76%;
+    margin: -188px auto 0 auto !important;
+  }
+
+  .transition-svg-7-wrapper {
+    display: block !important;
+    width: 104%;
+    max-width: 104%;
+    margin: -350px auto 0 -2% !important;
+    pointer-events: none;
+    z-index: 99 !important;
+    position: relative !important;
+    overflow: visible;
+  }
+
+  .transition-svg-6-wrapper {
+    display: block;
+    width: 104%;
+    max-width: 104%;
+    margin: -260px auto -120px -2% !important;
+    pointer-events: none;
+    z-index: 1;
+    overflow: visible;
+  }
+  .transition-svg-6-dresscode {
+    margin: -170px auto -120px -2% !important;
+  }
+
+  /* Calendar Block */
+  .calendar-block {
+    margin-top: -210px !important;
+  }
+  .calendar-unified-box {
+    max-width: 74%;
+    margin: 0 auto;
+  }
+
+  /* Gallery Block */
+  .gallery-block {
+    margin-top: 60px;
+  }
+  .gallery-overlapping-container {
+    height: clamp(230px, 68vw, 320px) !important;
+    max-width: 92% !important;
+    margin: 0 auto 110px auto !important;
+  }
+  .gallery-card-back {
+    top: 0 !important;
+    left: 2% !important;
+    width: 79% !important;
+    z-index: 2 !important;
+  }
+  .gallery-card-front {
+    bottom: -85px !important;
+    right: 2% !important;
+    width: 79% !important;
+    z-index: 3 !important;
+  }
+  .gallery-card-back img,
+  .gallery-card-front img {
+    image-rendering: -webkit-optimize-contrast;
+  }
+  .gallery-bg-wave-top-right {
+    top: -45%;
+    right: -45% !important;
+    margin-right: -150px !important;
+    margin-top: 30px !important;
+    z-index: 1 !important;
+  }
+  .gallery-bg-wave {
+    display: block !important;
+    opacity: 1 !important;
+    clip-path: none !important;
+    animation: none !important;
+    margin-left: -196px !important;
+    margin-top: -110px !important;
+    transform: translateX(4px) !important;
+    z-index: 1 !important;
+  }
+
+  /* Timeline Block */
+  .timeline-box img {
+    width: 125% !important;
+    max-width: 125% !important;
+    margin-left: -12.5% !important;
+    margin-top: 215px !important;
+  }
+
+  /* Banner Photo Block 15.svg */
+  .banner-photo-wrapper {
+    margin-top: -15px !important;
+  }
+  .banner-photo-box img {
+    max-width: 84% !important;
+  }
+
+  /* Locations Block */
+  .locations-block {
+    margin-top: -160px !important;
+  }
+  .location-link-wrapper img {
+    max-width: 84% !important;
+    margin: 0 auto !important;
+  }
+  .location-link-wrapper:last-child {
+    margin-top: -120px !important;
+  }
+
+  /* Dresscode Block */
+  .dresscode-block {
+    margin-top: -340px !important;
+  }
+  .dresscode-svg-19 { max-width: 60%; margin: -200px auto 12px auto !important; }
+  .dresscode-svg-20 { max-width: 85%; margin: -165px auto 12px auto !important; }
+  .dresscode-svg-21 { max-width: 75%; margin: -190px auto 14px auto; }
+  .dresscode-svg-22 { max-width: 100%; margin: -85px auto 12px auto; }
+  .dresscode-svg-23 { max-width: 80%; margin: -90px auto 0 auto; }
+
+  /* Details Block */
+  .details-block {
+    margin-top: -285px !important;
+  }
+  .details-card img {
+    width: 88% !important;
+    max-width: 88% !important;
+    margin: 0 auto !important;
+  }
+
+  /* Footer Block 27.svg (Ждём вас!) */
+  .footer-block {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
+    position: relative !important;
+    z-index: 10 !important;
+  }
+  .footer-block img {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    display: block !important;
+    transform: none !important;
+  }
+
+  /* Audio Floating Widget */
+  .audio-widget-container {
+    bottom: 14px;
+    left: 12px;
+  }
+  .audio-toggle-btn {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Timeline Block Smooth 2.5s Slide Up Animation on Scroll */
+.timeline-block {
+  opacity: 0;
+  transform: translate3d(0, 80px, 0);
+  transition: opacity 2.5s cubic-bezier(0.16, 1, 0.3, 1), transform 2.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  will-change: opacity, transform;
+}
+
+.timeline-block.active,
+.timeline-block[data-scroll-ready="true"] {
+  opacity: 1 !important;
+  transform: translate3d(0, 0, 0) !important;
+}

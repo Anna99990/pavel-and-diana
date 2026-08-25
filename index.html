@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Павел & Диана — Свадебное Приглашение</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css?v=20260824_213">
+</head>
+<body>
+
+  <!-- Audio Element -->
+  <audio id="weddingAudio" src="assets/wedding_music.mp3?v=20260825_1" preload="auto" loop></audio>
+
+  <!-- Плавающий элемент музыки слева сверху (сохраненный плеер) -->
+  <div class="audio-widget-container" id="audioWidget">
+    <button class="audio-toggle-btn" id="audioToggleBtn" aria-label="Управление музыкой">
+      <span class="heart-pulse-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+      </span>
+      <span class="equalizer-waves hidden" id="equalizerWaves">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </span>
+      <span class="audio-btn-text" id="audioBtnText">Вкл. музыку</span>
+    </button>
+  </div>
+
+  <!-- Главный контейнер для всех блоков -->
+  <div class="site-container">
+    <div class="hero-block block-section">
+      <div class="hero-svg-1">
+        <img src="assets/1.svg" alt="16.10" class="slide-img">
+      </div>
+      <div class="hero-svg-8">
+        <img src="assets/8.svg" alt="Павел и Диана фото" class="slide-img hero-photo-svg">
+        <img src="assets/6.svg" alt="Декоративная волна" class="hero-wave-line scroll-reveal">
+      </div>
+      <div class="hero-svg-2 scroll-reveal slide-in-up">
+        <img src="assets/2.svg" alt="Павел & Диана имена" class="slide-img">
+      </div>
+    </div>
+
+    <!-- Блок Музыки (между 2.svg и 4.svg): svg 3 (вкл. музыку) -->
+    <div class="music-block block-section scroll-reveal zoom-in" id="musicBlock">
+      <button class="music-svg-btn" id="musicToggleBtn" aria-label="Включить музыку">
+        <img src="assets/3.svg" alt="Вкл. музыку" class="slide-img music-pure-svg">
+      </button>
+    </div>
+
+    <!-- Блок 2 (Приветствие): svg 4 + svg 5 -->
+    <div class="greeting-block block-section scroll-reveal fade-in">
+      <div class="greeting-svg-4 scroll-reveal slide-in-left">
+        <img src="assets/4.svg" alt="16.10.2026" class="slide-img">
+      </div>
+      <div class="greeting-svg-5 scroll-reveal slide-in-right">
+        <img src="assets/5.svg" alt="Текст приглашения" class="slide-img">
+      </div>
+    </div>
+
+    <!-- Декоративная волна 7.svg между Приветствием и Календарем -->
+    <div class="transition-svg-7-wrapper transition-wave-line">
+      <img src="assets/7.svg" alt="Декоративная волна 7" class="transition-svg-7">
+    </div>
+
+    <!-- Блок 3 (Календарь): svg 9 и поверх него svg 10 -->
+    <div class="calendar-block block-section scroll-reveal zoom-in">
+      <div class="calendar-unified-box">
+        <img src="assets/9.svg?v=20260824_112" alt="Октябрь 2026" class="slide-img calendar-base-img">
+        <img src="assets/10.svg?v=20260824_112" alt="Сердце на 16 число" class="calendar-pulsing-heart">
+      </div>
+    </div>
+
+    <!-- Блок 4 (Галерея): 11.svg (сзади сверху), 18.svg (сзади снизу), 24.svg (сзади сверху справа), 13.svg (сверху слева) и 12.svg (снизу справа) -->
+    <div class="gallery-block block-section scroll-reveal zoom-in">
+      <div class="gallery-overlapping-container">
+        <div class="gallery-svg-11 gallery-bg-wave scroll-reveal">
+          <img src="assets/11.svg" alt="Декоративная линия верх" class="slide-img">
+        </div>
+        <div class="gallery-svg-18 gallery-bg-wave-bottom scroll-reveal">
+          <img src="assets/18.svg" alt="Декоративная линия низ" class="slide-img">
+        </div>
+        <div class="gallery-svg-24 gallery-bg-wave-top-right scroll-reveal">
+          <img src="assets/24.svg" alt="Декоративная линия верх справа" class="slide-img">
+        </div>
+        <div class="gallery-svg-13 gallery-card-back scroll-reveal">
+          <img src="assets/13.svg?v=20260824_112" alt="Фото колец" class="slide-img">
+        </div>
+        <div class="gallery-svg-12 gallery-card-front scroll-reveal">
+          <img src="assets/12.svg?v=20260824_112" alt="Фото рук" class="slide-img">
+        </div>
+      </div>
+    </div>
+
+    <!-- Блок 5 (План дня): svg 14 -->
+    <div class="timeline-block block-section scroll-reveal">
+      <div class="timeline-box">
+        <img src="assets/14.svg?v=20260825_1" alt="План дня" class="slide-img">
+      </div>
+    </div>
+
+    <!-- Блок Фото строго под планом дня: svg 15 (Фото пары в пальто под сакурой) -->
+    <div class="banner-photo-block block-section scroll-reveal zoom-in">
+      <div class="banner-photo-wrapper">
+        <img src="assets/15.svg?v=20260825_1" alt="Фото пары строго под планом дня" class="slide-img">
+      </div>
+    </div>
+
+    <!-- Блок 6 (Локации): svg 16, затем svg 17 без рамок со ссылками на Яндекс.Карты -->
+    <div class="locations-block block-section scroll-reveal fade-in">
+      <div class="location-cards-grid">
+        <!-- svg 16: ЗАГС -->
+        <a href="https://yandex.ru/maps/org/otdel_dvorets_registratsii_aktov_grazhdanskogo_sostoyaniya_pushkinskogo_rayona_sankt_peterburga/1008841937?si=j9fkeavkh97kdf05hx9gjxqcqw" target="_blank" rel="noopener noreferrer" class="location-link-wrapper scroll-reveal stagger-card" aria-label="Открыть ЗАГС на Яндекс.Картах">
+          <img src="assets/16.svg" alt="ЗАГС" class="slide-img location-pure-svg">
+        </a>
+
+        <!-- svg 17: Ресторан -->
+        <a href="https://yandex.ru/maps/org/unokafe/112255615290?si=j9fkeavkh97kdf05hx9gjxqcqw" target="_blank" rel="noopener noreferrer" class="location-link-wrapper scroll-reveal stagger-card" aria-label="Открыть Ресторан на Яндекс.Картах">
+          <img src="assets/17.svg" alt="Ресторан Унокафе" class="slide-img location-pure-svg">
+        </a>
+      </div>
+    </div>
+
+    <!-- Декоративная линия 6.svg между Локациями и Дресс-кодом -->
+    <div class="transition-svg-6-wrapper transition-svg-6-dresscode transition-wave-line">
+      <img src="assets/6.svg" alt="Декоративная линия" class="transition-svg-6" loading="lazy">
+    </div>
+
+    <!-- Блок 7 (Дресс-код): svg 19, 20, 21, 22, 23 -->
+    <div class="dresscode-block block-section scroll-reveal fade-in">
+      <div class="dresscode-svg-19 scroll-reveal slide-in-left">
+        <img src="assets/19.svg" alt="Дресс-код заголовок" class="slide-img">
+      </div>
+      <div class="dresscode-svg-20 scroll-reveal slide-in-right">
+        <img src="assets/20.svg" alt="Дресс-код текст" class="slide-img">
+      </div>
+      <div class="dresscode-svg-21 scroll-reveal zoom-in">
+        <img src="assets/21.svg" alt="Дресс-код оттенки" class="slide-img">
+      </div>
+      <div class="dresscode-svg-22 scroll-reveal slide-in-up">
+        <img src="assets/22.png?v=20260825_1" alt="Дресс-код образы" class="slide-img">
+      </div>
+      <div class="dresscode-svg-23 scroll-reveal slide-in-up">
+        <img src="assets/23.svg" alt="Дресс-код дополнительно" class="slide-img">
+      </div>
+    </div>
+
+    <!-- Декоративная линия 6.svg между Дресс-кодом и Деталями -->
+    <div class="transition-svg-6-wrapper transition-wave-line">
+      <img src="assets/6.svg" alt="Декоративная линия" class="transition-svg-6" loading="lazy">
+    </div>
+
+    <!-- Блок 8 (Детали): svg 25 -->
+    <div class="details-block block-section scroll-reveal zoom-in">
+      <div class="details-card">
+        <img src="assets/25.svg" alt="Детали" class="slide-img">
+      </div>
+    </div>
+
+    <!-- Блок 10 (Анкета): svg 26 — оставить как есть -->
+    <div class="rsvp-block block-section scroll-reveal zoom-in" id="rsvpSection">
+      <div class="rsvp-card-wrapper">
+        <img src="assets/26.svg?v=20260824_02" alt="Анкета гостя" class="rsvp-card-svg" id="openRsvpBtn">
+        
+        <!-- Collapsible Interactive Form -->
+        <form class="rsvp-interactive-form hidden" id="rsvpForm">
+          <div class="form-group">
+            <label for="guestName">Ваше Имя и Фамилия</label>
+            <input type="text" id="guestName" name="guestName" placeholder="Иван Иванов" required>
+          </div>
+
+          <div class="form-group">
+            <label>Планируете ли вы присутствовать?</label>
+            <div class="radio-options">
+              <label class="radio-label">
+                <input type="radio" name="attendance" value="yes" checked>
+                <span>Я приду</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="attendance" value="couple">
+                <span>Буду с парой</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="attendance" value="no">
+                <span>К сожалению, не смогу</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group" id="plusOneGroup">
+            <label for="partnerName">Имя и Фамилия вашего спутника/спутницы</label>
+            <input type="text" id="partnerName" name="partnerName" placeholder="Анна Иванова">
+          </div>
+
+          <div class="form-group">
+            <label>Предпочтения по напиткам</label>
+            <div class="checkbox-options">
+              <label class="checkbox-label">
+                <input type="checkbox" name="drinks" value="Вино красное полусладкое">
+                <span>Вино красное полусладкое</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="drinks" value="Вино красное сухое">
+                <span>Вино красное сухое</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="drinks" value="Вино белое полусладкое">
+                <span>Вино белое полусладкое</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="drinks" value="Вино белое полусухое">
+                <span>Вино белое полусухое</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="drinks" value="Шампанское">
+                <span>Шампанское</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="drinks" value="Безалкогольные напитки">
+                <span>Безалкогольные напитки</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="drinks" value="Крепкое спиртное">
+                <span>Крепкое спиртное</span>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="rsvp-submit-btn">Отправить ответ</button>
+          <div class="rsvp-success-message hidden" id="rsvpSuccess">
+            Спасибо! Ваш ответ успешно отправлен!
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Блок 9 (Футер): svg 27 -->
+    <div class="footer-block block-section scroll-reveal slide-in-up">
+      <img src="assets/27.svg?v=20260824_76" alt="Ждём вас!" class="slide-img">
+    </div>
+
+  </div>
+
+  <!-- Image Copy Protection Script -->
+  <script>
+    document.addEventListener('contextmenu', (e) => {
+      const isMedia = ['img', 'image', 'video', 'svg', 'picture'].some(
+        tagName => tagName.localeCompare(e.target.tagName, undefined, { sensitivity: 'base' }) === 0
+      );
+      if (isMedia) e.preventDefault();
+    });
+    document.addEventListener('dragstart', (e) => {
+      if (e.target.tagName && ['IMG', 'SVG'].includes(e.target.tagName.toUpperCase())) {
+        e.preventDefault();
+      }
+    });
+  </script>
+  <script src="app.js?v=20260824_74"></script>
+</body>
+</html>
